@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Retro calculator")
 class CalculatorTest {
-
+/*
     @Test
     @DisplayName("should display correct number after pressing digit keys")
     void testDigitInput() {
@@ -36,7 +36,22 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
-
+*/
     //TODO hier weitere Tests erstellen
+
+    @Test
+    @DisplayName("Should display a dotted number.")
+    void testDotKey(){
+    Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressDotKey();
+        calc.pressDigitKey(1);
+
+    String expected = "1.1";
+    String actual = calc.readScreen();
+
+    assertEquals(expected, actual);
+}
 }
 
