@@ -36,9 +36,10 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
-*/
+
     //TODO hier weitere Tests erstellen
 
+    //1. Grün
     @Test
     @DisplayName("Should display a dotted number.")
     void testDotKey(){
@@ -53,5 +54,16 @@ class CalculatorTest {
 
     assertEquals(expected, actual);
 }
+*/
+    @Test
+    @DisplayName("should display a negative digit")
+    void testNegativeDigit() {
+    Calculator calc = new Calculator();
+        calc.pressNegativeKey();
+        calc.pressDigitKey(2);
+        assertEquals("-2", calc.readScreen());
+}
+
+
 }
 
