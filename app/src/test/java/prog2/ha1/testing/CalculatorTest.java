@@ -79,9 +79,7 @@ class CalculatorTest {
         calc.pressDotKey();
         calc.pressDigitKey(6);
         assertEquals("2.6", calc.readScreen());
-
         calc.pressEqualsKey();
-
         String expected = "3.7";
         String actual = calc.readScreen();
         assertEquals(expected,actual);
