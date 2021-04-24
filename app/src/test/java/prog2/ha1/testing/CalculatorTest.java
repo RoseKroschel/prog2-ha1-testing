@@ -54,7 +54,7 @@ class CalculatorTest {
 
     assertEquals(expected, actual);
 }
-*/
+
     @Test
     @DisplayName("should display a negative digit")
     void testNegativeDigit() {
@@ -63,7 +63,31 @@ class CalculatorTest {
         calc.pressDigitKey(2);
         assertEquals("-2", calc.readScreen());
 }
+*/
+    @Test
+    @DisplayName("should display a double result")
+    void testDoubleResult(){
+        Calculator calc = new Calculator();
+        calc.pressDigitKey(1);
+        calc.pressDotKey();
+        calc.pressDigitKey(1);
+        assertEquals("1.1", calc.readScreen());
 
+        calc.pressBinaryOperationKey("+");
+
+        calc.pressDigitKey(2);
+        calc.pressDotKey();
+        calc.pressDigitKey(6);
+        assertEquals("2.6", calc.readScreen());
+
+        calc.pressEqualsKey();
+
+        String expected = "3.7";
+        String actual = calc.readScreen();
+        assertEquals(expected,actual);
+
+
+    }
 
 }
 
